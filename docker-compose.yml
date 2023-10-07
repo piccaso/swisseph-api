@@ -1,0 +1,15 @@
+version: "2.2"
+services:
+
+  web:
+    build: .
+    restart: unless-stopped
+    read_only: true
+    command: /bin/sweapi
+    ports:
+      - "8080:8080"
+    mem_limit: "4g"
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp
