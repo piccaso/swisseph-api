@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"net/url"
 	"os/exec"
-	"io"
 )
 
 func main() {
@@ -35,9 +34,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "text/plain")
+	w.Header().Set("Content-Type", "text/plain; charset=utf8")
 	w.Write(out.Bytes())
-	//io.WriteString(w, toUtf8(out.Bytes()))
 }
 
 func getParameter(u *url.URL, name string) (string, error) {
