@@ -12,7 +12,7 @@ WORKDIR /src/ephe2
 RUN 7z x /src/ephe/ephe.7z.001 -o/src/ephe2
 
 
-FROM golang AS apibuild
+FROM golang:1.11-buster AS apibuild
 ADD api.go .
 RUN go build -v -o /api api.go
 
