@@ -1,4 +1,4 @@
-FROM ubuntu:jammy as base
+FROM ubuntu:bionic as base
 
 FROM base as swephbuild
 RUN apt-get update && apt-get -y install git build-essential 
